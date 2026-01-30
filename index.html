@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto de Capacitación - Cursos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Animaciones suaves */
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- ==================== DATOS DE CURSOS (EDITABLE) ==================== -->
+    <script>
+        // 📝 EDITA ESTA SECCIÓN PARA ACTUALIZAR EL CONTENIDO DE LA PÁGINA
+        const DATOS_INSTITUTO = {
+            nombreInstituto: "Instituto Profesional de Capacitación",
+            hero: {
+                titulo: "Impulsa tu Carrera Profesional",
+                subtitulo: "Cursos especializados con instructores certificados y horarios flexibles",
+                botonTexto: "Ver Cursos"
+            },
+            cursos: [
+                {
+                    id: 1,
+                    titulo: "Lectura de Planos de Arquitectura",
+                    descripcion: "Aprende a interpretar planos arquitectónicos, cortes, elevaciones y detalles constructivos con precisión profesional.",
+                    imagen: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500&h=300&fit=crop",
+                    horarios: [
+                        {
+                            dias: "Lunes a Viernes",
+                            horas: "9:00 - 13:00",
+                            inicio: "10 de Febrero",
+                            urlInscripcion: "https://cursos.sencico.gob.pe/home/cursocorto?ph=E0003H-031-2026"
+                        },
+                        {
+                            dias: "Sábados",
+                            horas: "14:00 - 18:00",
+                            inicio: "15 de Febrero",
+                            urlInscripcion: "https://ejemplo.com/inscripcion-sabados"
+                        }
+                    ]
+                },
+                {
+                    id: 2,
+                    titulo: "Excel Avanzado para Empresas",
+                    descripcion: "Domina tablas dinámicas, macros, Power Query y análisis de datos para optimizar tu productividad empresarial.",
+                    imagen: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop",
+                    horarios: [
+                        {
+                            dias: "Martes y Jueves",
+                            horas: "18:00 - 21:00",
+                            inicio: "12 de Febrero",
+                            urlInscripcion: "https://ejemplo.com/inscripcion-excel-1"
+                        },
+                        {
+                            dias: "Domingos",
+                            horas: "9:00 - 14:00",
+                            inicio: "16 de Febrero",
+                            urlInscripcion: "https://ejemplo.com/inscripcion-excel-2"
+                        }
+                    ]
+                },
+                {
+                    id: 3,
+                    titulo: "Marketing Digital y Redes Sociales",
+                    descripcion: "Estrategias efectivas de marketing en plataformas digitales, análisis de métricas y creación de contenido atractivo.",
+                    imagen: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
+                    horarios: [
+                        {
+                            dias: "Lunes a Viernes",
+                            horas: "19:00 - 22:00",
+                            inicio: "17 de Febrero",
+                            urlInscripcion: "https://ejemplo.com/inscripcion-marketing-1"
+                        }
+                    ]
+                },
+                {
+                    id: 4,
+                    titulo: "Gestión de Proyectos - PMI",
+                    descripcion: "Metodologías ágiles y tradicionales para la gestión efectiva de proyectos según estándares internacionales.",
+                    imagen: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop",
+                    horarios: [
+                        {
+                            dias: "Miércoles y Viernes",
+                            horas: "18:30 - 21:30",
+                            inicio: "19 de Febrero",
+                            urlInscripcion: "https://ejemplo.com/inscripcion-pmi-1"
+                        },
+                        {
+                            dias: "Sábados",
+                            horas: "9:00 - 15:00",
+                            inicio: "22 de Febrero",
+                            urlInscripcion: "https://ejemplo.com/inscripcion-pmi-2"
+                        }
+                    ]
+                },
+                {
+                    id: 5,
+                    titulo: "AutoCAD 2D y 3D",
+                    descripcion: "Desde lo básico hasta modelado 3D avanzado. Ideal para arquitectos, ingenieros y diseñadores.",
+                    imagen: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500&h=300&fit=crop",
+                    horarios: [
+                        {
+                            dias: "Lunes a Jueves",
+                            horas: "15:00 - 18:00",
+                            inicio: "24 de Febrero",
+                            urlInscripcion: "https://ejemplo.com/inscripcion-autocad-1"
+                        }
+                    ]
+                },
+                {
+                    id: 6,
+                    titulo: "Desarrollo Web Full Stack",
+                    descripcion: "HTML, CSS, JavaScript, React y Node.js. Conviértete en desarrollador web completo.",
+                    imagen: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop",
+                    horarios: [
+                        {
+                            dias: "Lunes a Viernes",
+                            horas: "19:00 - 22:00",
+                            inicio: "3 de Marzo",
+                            urlInscripcion: "https://ejemplo.com/inscripcion-webdev-1"
+                        },
+                        {
+                            dias: "Sábados y Domingos",
+                            horas: "10:00 - 16:00",
+                            inicio: "8 de Marzo",
+                            urlInscripcion: "https://ejemplo.com/inscripcion-webdev-2"
+                        }
+                    ]
+                }
+            ]
+        };
+    </script>
+    <!-- ================================================================== -->
+
+    <!-- HERO SECTION -->
+    <header class="bg-gradient-to-r from-blue-700 to-blue-900 text-white">
+        <nav class="container mx-auto px-4 py-4">
+            <h1 class="text-2xl font-bold" id="nombreInstituto"></h1>
+        </nav>
+        
+        <div class="container mx-auto px-4 py-20 md:py-32 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-in" id="heroTitulo"></h2>
+            <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto fade-in" id="heroSubtitulo"></p>
+            <a href="#cursos" class="inline-block bg-white text-blue-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1" id="heroBoton"></a>
+        </div>
+    </header>
+
+    <!-- SECCIÓN DE CURSOS -->
+    <section id="cursos" class="container mx-auto px-4 py-16">
+        <h3 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">Nuestros Cursos</h3>
+        <p class="text-center text-gray-600 mb-12 text-lg">Elige el programa que mejor se adapte a tus objetivos</p>
+        
+        <!-- Grid de tarjetas -->
+        <div id="cursosGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Las tarjetas se generarán dinámicamente con JavaScript -->
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2" id="footerNombre"></p>
+            <p class="text-gray-400">© 2026 Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT PARA GENERAR CONTENIDO DINÁMICO -->
+    <script>
+        // Cargar datos del hero
+        document.getElementById('nombreInstituto').textContent = DATOS_INSTITUTO.nombreInstituto;
+        document.getElementById('footerNombre').textContent = DATOS_INSTITUTO.nombreInstituto;
+        document.getElementById('heroTitulo').textContent = DATOS_INSTITUTO.hero.titulo;
+        document.getElementById('heroSubtitulo').textContent = DATOS_INSTITUTO.hero.subtitulo;
+        document.getElementById('heroBoton').textContent = DATOS_INSTITUTO.hero.botonTexto;
+
+        // Generar tarjetas de cursos
+        const cursosGrid = document.getElementById('cursosGrid');
+        
+        DATOS_INSTITUTO.cursos.forEach(curso => {
+            // Crear tarjeta de curso
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-2';
+            
+            // Generar HTML de horarios
+            let horariosHTML = '';
+            curso.horarios.forEach(horario => {
+                horariosHTML += `
+                    <div class="border-t border-gray-200 pt-3 mt-3">
+                        <div class="flex items-start justify-between mb-2">
+                            <div class="flex-1">
+                                <p class="font-semibold text-gray-700">${horario.dias}</p>
+                                <p class="text-sm text-gray-600">${horario.horas}</p>
+                                <p class="text-sm text-blue-600 font-medium mt-1">Inicio: ${horario.inicio}</p>
+                            </div>
+                            <a href="${horario.urlInscripcion}" 
+                               target="_blank"
+                               class="bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-blue-800 transition duration-200 whitespace-nowrap ml-2">
+                                Inscribirse
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            card.innerHTML = `
+                <img src="${curso.imagen}" alt="${curso.titulo}" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">${curso.titulo}</h4>
+                    <p class="text-gray-600 mb-4">${curso.descripcion}</p>
+                    
+                    <div class="bg-gray-50 rounded-lg p-4 -mx-2">
+                        <h5 class="font-semibold text-gray-700 mb-2 px-2">Horarios Disponibles:</h5>
+                        ${horariosHTML}
+                    </div>
+                </div>
+            `;
+            
+            cursosGrid.appendChild(card);
+        });
+    </script>
+
+</body>
+</html>
