@@ -372,7 +372,7 @@
                 <!-- Contenido expandible (horarios y detalles) -->
                 <div class="course-content" id="content-${index}">
                     <div class="px-6 pb-6">
-                        <img src="${curso.imagen}" alt="${curso.titulo}" class="w-full h-64 object-cover rounded-lg mb-4">
+                        <img src="${curso.imagen}" alt="${curso.titulo}" class="w-full aspect-[4/3] object-cover rounded-lg mb-4">
                         <p class="text-gray-600 mb-4">${curso.descripcion}</p>
                         
                         <!-- Costo y Duración -->
@@ -421,17 +421,18 @@
             if (!isActive) {
                 content.classList.add('active');
                 arrow.classList.add('rotate');
-                
-                // Scroll suave hacia el título del curso con offset
-                setTimeout(() => {
-                    const headerTop = header.getBoundingClientRect().top + window.pageYOffset;
-                    const offset = 20; // Espacio desde el top
-                    window.scrollTo({
-                        top: headerTop - offset,
-                        behavior: 'smooth'
-                    });
-                }, 100);
             }
+            
+            // Siempre hacer scroll al título del curso seleccionado
+            // (tanto si se abre como si se cierra)
+            setTimeout(() => {
+                const headerTop = header.getBoundingClientRect().top + window.pageYOffset;
+                const offset = 20; // Espacio desde el top
+                window.scrollTo({
+                    top: headerTop - offset,
+                    behavior: 'smooth'
+                });
+            }, 100);
         }
     </script>
 
