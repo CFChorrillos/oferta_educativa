@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oferta Educativa - SENCICO Chorrillos</title>
+    <title>SENCICO Chorrillos - Cursos de Capacitación</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Animaciones suaves */
@@ -18,23 +18,6 @@
         html {
             scroll-behavior: smooth;
         }
-        /* Animación para expandir contenido */
-        .course-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-        }
-        .course-content.active {
-            max-height: 2000px;
-            transition: max-height 0.6s ease-in;
-        }
-        /* Rotación de flecha */
-        .arrow {
-            transition: transform 0.3s ease;
-        }
-        .arrow.rotate {
-            transform: rotate(180deg);
-        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -47,7 +30,7 @@
             hero: {
                 titulo: "SENCICO CHORRILLOS",
                 subtitulo: "Aprende y capacítate con los expertos",
-                botonTexto: "Ver Ubicación",
+                botonTexto: "Ver ubicación",
                 botonUrl: "https://maps.app.goo.gl/y7seycPrHt3W5th4A"
             },
             cursos: [
@@ -55,10 +38,14 @@
                     id: 1,
                     titulo: "Sistema Constructivo en Seco - Drywall",
                     descripcion: "Aprende a instalar estructuras de acero galvanizado con placas de yeso o fibrocemento para crear tabiques, cielos rasos y coberturas bajo normas técnicas.",
-                    costo: "S/ 210",
-                    duracion: "60 Horas",
                     imagen: "https://i.postimg.cc/WpDPXfd5/EV9A0758.jpg",
                     horarios: [
+                        /*{
+                            dias: "Sábados y domingos",
+                            horas: "14:00 - 20:00",
+                            inicio: "11 de Enero",
+                            urlInscripcion: "https://cursos.sencico.gob.pe/home/cursocorto?ph=E0048H-031-2026"
+                        }*/,
                         {
                             dias: "Lunes a viernes",
                             horas: "18:30 - 20:30",
@@ -77,10 +64,14 @@
                     id: 2,
                     titulo: "Diseño y Construcción de Muebles de Melamina",
                     descripcion: "Aprende a diseñar y armar muebles de melamina seleccionado con criterio técnico los materiales, instrumentos, herramientas y equipos necesarios, de acuerdo a los planos y siguiendo las normas establecidas.",
-                    costo: "S/ 160",
-                    duracion: "68 Horas",
                     imagen: "https://i.postimg.cc/FzfZ9H90/mel33.png",
                     horarios: [
+                        /*{
+                            dias: "Sábados y domingos",
+                            horas: "09:00 - 13:00",
+                            inicio: "10 de Enero",
+                            urlInscripcion: "https://cursos.sencico.gob.pe/home/cursocorto?ph=E0045H-031-2026"
+                        }*/,
                         {
                             dias: "Sábados y domingos",
                             horas: "14:00 - 20:00",
@@ -111,8 +102,6 @@
                     id: 3,
                     titulo: "Acabados para Superficies de Cemento con Pintura",
                     descripcion: "Aprende a realizar trabajos de acabados con pintura en superficies de cemento, aplicando procedimienntos y criterios tecnológicos, así como el cumplimiento de las normas de seguridad y salud en el trabajo.",
-                    costo: "S/ 95",
-                    duracion: "40 Horas",
                     imagen: "https://i.postimg.cc/sgPMZCXt/pin.png",
                     horarios: [
                         {
@@ -133,8 +122,6 @@
                     id: 4,
                     titulo: "Instalación de Revestimiento Cerámico y Porcelanato",
                     descripcion: "Aprende a instalar revestimientos cerámicos y porcelanatos en pisos o paredes. Domina el uso de herramientas, adhesivos y fraguas siguiendo normas de seguridad y calidad.",
-                    costo: "S/ 120",
-                    duracion: "74 Horas",
                     imagen: "https://i.postimg.cc/nc42tDDW/cera-2.jpg",
                     horarios: [
                         {
@@ -149,8 +136,6 @@
                     id: 5,
                     titulo: "Reparaciones Básicas de Instalaciones Eléctricas Domiciliarias",
                     descripcion: "Aprende a diagnosticar y reparar problemas eléctricos comunes en viviendas con seguridad y siguiendo normativas vigentes.",
-                    costo: "S/ 130",
-                    duracion: "30 Horas",
                     imagen: "https://i.postimg.cc/BQyqQS0n/ece.png",
                     horarios: [
                         {
@@ -171,8 +156,6 @@
                     id: 6,
                     titulo: "Reparaciones Básicas de Instalaciones Sanitarias Domiciliarias",
                     descripcion: "Aprende sobre técnicas de mantenimiento y reparación de sistemas de agua, desagüe y accesorios sanitarios en viviendas.",
-                    costo: "S/ 130",
-                    duracion: "30 Horas",
                     imagen: "https://i.postimg.cc/brr9gHd8/ddffff.png",
                     horarios: [
                         {
@@ -187,8 +170,6 @@
                     id: 7,
                     titulo: "Lectura de Planos de Arquitectura",
                     descripcion: "Domina la lectura de planos y especificaciones arquitectónicas para comercio y vivienda. Aprende simbología técnica y normativa vigente bajo estándares de calidad y seguridad.",
-                    costo: "S/ 80",
-                    duracion: "30 Horas",
                     imagen: "https://i.postimg.cc/zvXhZyZk/arq1.png",
                     horarios: [
                         {
@@ -209,8 +190,6 @@
                     id: 8,
                     titulo: "Lectura de Planos de Estructuras",
                     descripcion: "Aprende a interpretar planos y detalles constructivos de estructuras para viviendas y comercio. Domina la simbología técnica bajo normas de seguridad y calidad vigentes.",
-                    costo: "S/ 80",
-                    duracion: "30 Horas",
                     imagen: "https://i.postimg.cc/Kv6LRVMT/estruc1.png",
                     horarios: [
                         {
@@ -231,8 +210,6 @@
                     id: 9,
                     titulo: "Metrados en Edificaciones",
                     descripcion: "Aprende a calcular metrados de estructuras, arquitectura e instalaciones de un proyecto de edificación, analizando e interpretando los respectivos planos y siguiendo lo parámetros de la normativa vigente.",
-                    costo: "S/ 200",
-                    duracion: "60 Horas",
                     imagen: "https://i.postimg.cc/mZF4C9kr/met1.png",
                     horarios: [
                         {
@@ -247,8 +224,6 @@
                     id: 10,
                     titulo: "Administración de Almacén de Obra",
                     descripcion: "Aprende a gestionar un almacén de obra de forma eficiente. El curso enseña a clasificar bienes, realizar inventarios y reportes de cierre bajo normas de seguridad vigentes.",
-                    costo: "S/ 110",
-                    duracion: "30 Horas",
                     imagen: "https://i.postimg.cc/TPhFG8Wp/aml1.png",
                     horarios: [
                         {
@@ -275,7 +250,7 @@
         <nav class="container mx-auto px-4 py-4">
             <h1 class="text-2xl font-bold" id="nombreInstituto"></h1>
         </nav>
-        
+
         <div class="container mx-auto px-4 py-10 md:py-16 text-center">
             <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-in" id="heroTitulo"></h2>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto fade-in" id="heroSubtitulo" style="color: rgba(255, 255, 255, 0.95);"></p>
@@ -286,10 +261,10 @@
     <!-- SECCIÓN DE CURSOS -->
     <section id="cursos" class="container mx-auto px-4 py-16">
         <h3 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">Nuestros Cursos</h3>
-        <p class="text-center text-gray-600 mb-12 text-lg">Selecciona un curso para ver los horarios disponibles</p>
-        
-        <!-- Lista de cursos expandibles -->
-        <div id="cursosLista" class="max-w-5xl mx-auto space-y-4">
+        <p class="text-center text-gray-600 mb-12 text-lg">Elige el curso que mejor se adapte a tus objetivos y amplía tus oportunidades laborales</p>
+
+        <!-- Grid de tarjetas -->
+        <div id="cursosGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Las tarjetas se generarán dinámicamente con JavaScript -->
         </div>
     </section>
@@ -324,28 +299,28 @@
         document.getElementById('footerCorreo').href = 'mailto:' + DATOS_INSTITUTO.informacion.correo;
         document.getElementById('footerDireccion').textContent = DATOS_INSTITUTO.informacion.direccion;
 
-        // Generar lista de cursos expandibles
-        const cursosLista = document.getElementById('cursosLista');
-        
-        DATOS_INSTITUTO.cursos.forEach((curso, index) => {
-            // Crear contenedor del curso
-            const cursoItem = document.createElement('div');
-            cursoItem.className = 'bg-white rounded-lg shadow-md overflow-hidden';
-            
+        // Generar tarjetas de cursos
+        const cursosGrid = document.getElementById('cursosGrid');
+
+        DATOS_INSTITUTO.cursos.forEach(curso => {
+            // Crear tarjeta de curso
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-2';
+
             // Generar HTML de horarios
             let horariosHTML = '';
             curso.horarios.forEach(horario => {
                 horariosHTML += `
-                    <div class="border-t border-gray-200 pt-4 mt-4 first:border-t-0 first:mt-0 first:pt-0">
-                        <div class="flex items-start justify-between">
+                    <div class="border-t border-gray-200 pt-3 mt-3">
+                        <div class="flex items-start justify-between mb-2">
                             <div class="flex-1">
-                                <p class="font-semibold text-gray-700 text-lg">${horario.dias}</p>
-                                <p class="text-gray-600 mt-1">${horario.horas}</p>
-                                <p class="text-sm font-medium mt-2" style="color: rgb(222, 75, 57);">Inicio: ${horario.inicio}</p>
+                                <p class="font-semibold text-gray-700">${horario.dias}</p>
+                                <p class="text-sm text-gray-600">${horario.horas}</p>
+                                <p class="text-sm font-medium mt-1" style="color: rgb(222, 75, 57);">Inicio: ${horario.inicio}</p>
                             </div>
                             <a href="${horario.urlInscripcion}" 
                                target="_blank"
-                               class="text-white px-5 py-2.5 rounded-md text-sm font-semibold transition duration-200 whitespace-nowrap ml-4" 
+                               class="text-white px-4 py-2 rounded-md text-sm font-semibold transition duration-200 whitespace-nowrap ml-2" 
                                style="background-color: rgb(222, 75, 57);"
                                onmouseover="this.style.backgroundColor='rgb(200, 60, 45)'"
                                onmouseout="this.style.backgroundColor='rgb(222, 75, 57)'">
@@ -355,85 +330,22 @@
                     </div>
                 `;
             });
-            
-            cursoItem.innerHTML = `
-                <!-- Cabecera del curso (siempre visible) -->
-                <div class="p-6 cursor-pointer hover:bg-gray-50 transition duration-200" id="header-${index}" onclick="toggleCurso(${index})">
-                    <div class="flex items-center justify-between">
-                        <div class="flex-1">
-                            <h4 class="text-xl font-bold text-gray-800">${curso.titulo}</h4>
-                        </div>
-                        <svg class="arrow w-6 h-6 text-gray-600" id="arrow-${index}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                </div>
-                
-                <!-- Contenido expandible (horarios y detalles) -->
-                <div class="course-content" id="content-${index}">
-                    <div class="px-6 pb-6">
-                        <img src="${curso.imagen}" alt="${curso.titulo}" class="w-full aspect-[4/3] object-cover rounded-lg mb-4">
-                        <p class="text-gray-600 mb-4">${curso.descripcion}</p>
-                        
-                        <!-- Costo y Duración -->
-                        <div class="flex flex-wrap justify-start gap-4 sm:gap-8 mb-6 text-gray-700 text-sm sm:text-base">
-                            <div class="flex items-center gap-2 whitespace-nowrap">
-                                <svg class="w-5 h-5 flex-shrink-0" style="color: rgb(222, 75, 57);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                                <span class="font-semibold">Costo: ${curso.costo}</span>
-                            </div>
-                            <div class="flex items-center gap-2 whitespace-nowrap">
-                                <svg class="w-5 h-5 flex-shrink-0" style="color: rgb(222, 75, 57);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <span class="font-semibold">Duración: ${curso.duracion}</span>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-gray-50 rounded-lg p-6">
-                            <h5 class="font-bold text-gray-800 text-lg mb-4">Horarios Disponibles:</h5>
-                            ${horariosHTML}
-                        </div>
+
+            card.innerHTML = `
+                <img src="${curso.imagen}" alt="${curso.titulo}" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">${curso.titulo}</h4>
+                    <p class="text-gray-600 mb-4">${curso.descripcion}</p>
+                    
+                    <div class="bg-gray-50 rounded-lg p-4 -mx-2">
+                        <h5 class="font-semibold text-gray-700 mb-2 px-2">Horarios Disponibles:</h5>
+                        ${horariosHTML}
                     </div>
                 </div>
             `;
-            
-            cursosLista.appendChild(cursoItem);
-        });
 
-        // Función para expandir/contraer cursos
-        function toggleCurso(index) {
-            const content = document.getElementById(`content-${index}`);
-            const arrow = document.getElementById(`arrow-${index}`);
-            const header = document.getElementById(`header-${index}`);
-            const isActive = content.classList.contains('active');
-            
-            // Cerrar todos los cursos
-            document.querySelectorAll('.course-content').forEach(c => {
-                c.classList.remove('active');
-            });
-            document.querySelectorAll('.arrow').forEach(a => {
-                a.classList.remove('rotate');
-            });
-            
-            // Si el curso no estaba activo, abrirlo
-            if (!isActive) {
-                content.classList.add('active');
-                arrow.classList.add('rotate');
-            }
-            
-            // Siempre hacer scroll al título del curso seleccionado
-            // (tanto si se abre como si se cierra)
-            setTimeout(() => {
-                const headerTop = header.getBoundingClientRect().top + window.pageYOffset;
-                const offset = 20; // Espacio desde el top
-                window.scrollTo({
-                    top: headerTop - offset,
-                    behavior: 'smooth'
-                });
-            }, 100);
-        }
+            cursosGrid.appendChild(card);
+        });
     </script>
 
 </body>
