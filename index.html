@@ -358,7 +358,7 @@
             
             cursoItem.innerHTML = `
                 <!-- Cabecera del curso (siempre visible) -->
-                <div class="p-6 cursor-pointer hover:bg-gray-50 transition duration-200" onclick="toggleCurso(${index})">
+                <div class="p-6 cursor-pointer hover:bg-gray-50 transition duration-200" id="header-${index}" onclick="toggleCurso(${index})">
                     <div class="flex items-center justify-between">
                         <div class="flex-1">
                             <h4 class="text-xl font-bold text-gray-800">${curso.titulo}</h4>
@@ -376,15 +376,15 @@
                         <p class="text-gray-600 mb-4">${curso.descripcion}</p>
                         
                         <!-- Costo y Duración -->
-                        <div class="flex justify-start gap-8 mb-6 text-gray-700">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" style="color: rgb(222, 75, 57);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="flex flex-wrap justify-start gap-4 sm:gap-8 mb-6 text-gray-700 text-sm sm:text-base">
+                            <div class="flex items-center gap-2 whitespace-nowrap">
+                                <svg class="w-5 h-5 flex-shrink-0" style="color: rgb(222, 75, 57);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
                                 </svg>
                                 <span class="font-semibold">Costo: ${curso.costo}</span>
                             </div>
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" style="color: rgb(222, 75, 57);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="flex items-center gap-2 whitespace-nowrap">
+                                <svg class="w-5 h-5 flex-shrink-0" style="color: rgb(222, 75, 57);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                                 <span class="font-semibold">Duración: ${curso.duracion}</span>
@@ -406,6 +406,7 @@
         function toggleCurso(index) {
             const content = document.getElementById(`content-${index}`);
             const arrow = document.getElementById(`arrow-${index}`);
+            const header = document.getElementById(`header-${index}`);
             const isActive = content.classList.contains('active');
             
             // Cerrar todos los cursos
@@ -420,6 +421,16 @@
             if (!isActive) {
                 content.classList.add('active');
                 arrow.classList.add('rotate');
+                
+                // Scroll suave hacia el título del curso con offset
+                setTimeout(() => {
+                    const headerTop = header.getBoundingClientRect().top + window.pageYOffset;
+                    const offset = 20; // Espacio desde el top
+                    window.scrollTo({
+                        top: headerTop - offset,
+                        behavior: 'smooth'
+                    });
+                }, 100);
             }
         }
     </script>
