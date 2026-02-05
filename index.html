@@ -309,6 +309,47 @@
 
         // Generar tarjetas de cursos
         const cursosGrid = document.getElementById('cursosGrid');
+
+
+        // Función para copiar información del curso
+        function copiarInfoCurso(curso) {
+            let textoCopiado = '';
+            
+            curso.horarios.forEach((horario, index) => {
+                if (index > 0) textoCopiado += '\n\n';
+                textoCopiado += `*Curso:* ${curso.titulo}\n`;
+                textoCopiado += `*Inicio:* ${horario.inicio}\n`;
+                textoCopiado += `*Horario:* ${horario.dias} de ${horario.horas}\n`;
+                textoCopiado += `*Registro:* ${horario.urlInscripcion}`;
+            });
+            
+            // Copiar al portapapeles
+            navigator.clipboard.writeText(textoCopiado).then(() => {
+                // Mostrar notificación de éxito
+                const notificacion = document.createElement('div');
+                notificacion.textContent = '✓ Información copiada';
+                notificacion.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background-color: rgb(34, 197, 94);
+                    color: white;
+                    padding: 12px 24px;
+                    border-radius: 8px;
+                    font-weight: 600;
+                    z-index: 1000;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                `;
+                document.body.appendChild(notificacion);
+                
+                setTimeout(() => {
+                    notificacion.remove();
+                }, 2000);
+            }).catch(err => {
+                console.error('Error al copiar:', err);
+            });
+        }
+
         
         DATOS_INSTITUTO.cursos.forEach(curso => {
             // Crear tarjeta de curso
