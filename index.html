@@ -361,20 +361,20 @@
             curso.horarios.forEach(horario => {
                 horariosHTML += `
                     <div class="border-t border-gray-200 pt-3 mt-3">
-                        <div class="flex items-start justify-between mb-2">
-                            <div class="flex-1">
-                                <p class="font-semibold text-gray-700">${horario.dias}</p>
-                                <p class="text-sm text-gray-600">${horario.horas}</p>
-                                <p class="text-sm font-medium mt-1" style="color: rgb(222, 75, 57);">Inicio: ${horario.inicio}</p>
+                        <div class="mb-2">
+                            <p class="font-semibold text-gray-700">${horario.dias}</p>
+                            <p class="text-sm text-gray-600">${horario.horas}</p>
+                            <div class="flex items-center justify-between mt-1">
+                                <p class="text-sm font-medium" style="color: rgb(222, 75, 57);">Inicio: ${horario.inicio}</p>
+                                <a href="${horario.urlInscripcion}" 
+                                   target="_blank"
+                                   class="text-white px-4 py-2 rounded-md text-sm font-semibold transition duration-200 whitespace-nowrap" 
+                                   style="background-color: rgb(222, 75, 57);"
+                                   onmouseover="this.style.backgroundColor='rgb(200, 60, 45)'"
+                                   onmouseout="this.style.backgroundColor='rgb(222, 75, 57)'">
+                                    Regístrate
+                                </a>
                             </div>
-                            <a href="${horario.urlInscripcion}" 
-                               target="_blank"
-                               class="text-white px-4 py-2 rounded-md text-sm font-semibold transition duration-200 whitespace-nowrap ml-2" 
-                               style="background-color: rgb(222, 75, 57);"
-                               onmouseover="this.style.backgroundColor='rgb(200, 60, 45)'"
-                               onmouseout="this.style.backgroundColor='rgb(222, 75, 57)'">
-                                Regístrate
-                            </a>
                         </div>
                     </div>
                 `;
